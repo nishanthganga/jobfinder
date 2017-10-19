@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  programming_platform: MyString
+  years_experience: 1
+  months_experience: 1
+  description: MyString
+
+two:
+  title: MyString
+  programming_platform: MyString
+  years_experience: 1
+  months_experience: 1
+  description: MyString
