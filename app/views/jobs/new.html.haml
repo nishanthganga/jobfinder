@@ -1,0 +1,28 @@
+.content-area.blog-page.padding-top-40.add-jobs-container
+  .container
+    .row.col-lg-offset-2.col-lg-8
+      %form
+        .row
+          .col-sm-6
+            .form-group
+              %label{:for => "firstname"} Job Title
+              %input#firstname.form-control{:type => "text"}/
+          .col-sm-6
+            .form-group
+              %label{:for => "lastname"} Programming Language
+              %input#lastname.form-control{:type => "text"}/
+          .col-sm-6
+            .form-group
+              %label{:for => "email"} Experience
+              %input#email.form-control{:type => "text"}/
+          .col-sm-6
+            .form-group
+              %label{:for => "subject"} Skills Required
+              %input#subject.form-control{:type => "text"}/
+          .col-sm-12
+            .form-group
+              %label{:for => "message"} Job Descriptioin
+              %textarea#message.form-control{:rows => "8"}
+          .col-sm-12.text-center
+            %button.btn.btn-primary{:type => "submit"} Add Job
+        / /.row

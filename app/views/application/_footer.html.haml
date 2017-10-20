@@ -1,0 +1,18 @@
+/ Footer area
+.footer-area
+  .footer-copy.text-center
+    .container
+      .row
+        .pull-left
+          %p.bold
+            JobFinder Web App using Rails 5 and React
+        .bottom-menu.pull-right
+          %ul
+            %li
+              =link_to "Home", root_path
+            %li
+              =link_to "Search Jobs", jobs_search_path
+            %li
+              =link_to "Jobs on Twitter", jobs_on_twitter_path
+            %li
+              =link_to "Add Jobs", jobs_new_path
