@@ -1,53 +1,75 @@
 import React from 'react'
-class JobDescription extends React.Component{
 
-	render() {
-		return(
-		  <div className="blog-lst col-md-8 job-desc-div">
-	        <div className="section job-desc-section">
-	          <div className="job-description-title">
-	            <span>Job Title</span>
-	          </div>
-	          <div className="s-property-content">
-	            <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies</p>
-	          </div>
-	        </div>
-	        <div className="section job-desc-section">
-	          <div className="job-description-title">
-	            <span>Programming Language</span>
-	          </div>
-	          <div className="s-property-content">
-	            <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies</p>
-	          </div>
-	        </div>
-	        <div className="section job-desc-section">
-	          <div className="job-description-title">
-	            <span>Experience</span>
-	          </div>
-	          <div className="s-property-content">
-	            <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies</p>
-	          </div>
-	        </div>
-	        <div className="section job-desc-section">
-	          <div className="job-description-title">
-	            <span>Skills Required</span>
-	          </div>
-	          <div className="s-property-content">
-	            <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies</p>
-	          </div>
-	        </div>
-	        <div className="section job-desc-section">
-	          <div className="job-description-title">
-	            <span>Job Description</span>
-	          </div>
-	          <div className="s-property-content">
-	            <p>Nulla quis dapibus nisl. Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium. Nullam sed arcu ultricies</p>
-	          </div>
-	        </div>
-	      </div>
-		);
+
+const JobDescription = ({job}) => {
+  if (!job) {
+    return <div>Loading...</div>;
+  }
+
+	const skills_array = [];
+	job.skills.map((skill) => {
+	 skills_array.push(skill.programming_platform)
+	})
+	const job_skills = skills_array.join(", ")
+	
+	let work_experience = ""
+	if (job.years_experience == 0)
+	{
+		work_experience = job.months_experience + " years";
 	}
+	else if (job.months_experience == 0)
+	{
+		work_experience = job.years_experience + " months";
+	}
+	else
+	{
+		work_experience = job.years_experience+ " years" + " and " + job.years_experience + " months";
+	}	
 
-}
+
+
+  return (
+
+    <div className="blog-lst col-md-8 job-desc-div">
+
+        <div className="section job-desc-section">
+          <div className="job-description-title">
+            <span>Job Title</span>
+          </div>
+          <div className="s-property-content">
+            <p>{job.title}</p>
+          </div>
+        </div>
+
+        <div className="section job-desc-section">
+          <div className="job-description-title">
+            <span>Skills Required</span>
+          </div>
+          <div className="s-property-content">
+				<p>{job_skills}</p>
+          </div>
+        </div>
+
+        <div className="section job-desc-section">
+          <div className="job-description-title">
+            <span>Experience</span>
+          </div>
+          <div className="s-property-content">
+          	<p>{work_experience}</p>
+          </div>
+        </div>
+        
+        <div className="section job-desc-section">
+          <div className="job-description-title">
+            <span>Job Description</span>
+          </div>
+          <div className="s-property-content">
+            <p>{job.description}</p>
+          </div>
+        </div>
+	</div>
+  );
+};
+
 
 export default JobDescription;

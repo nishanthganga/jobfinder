@@ -1,6 +1,10 @@
 .content-area.blog-page.search-jobs-container
   .container
     .row.job-container
+   
+      #all_jobs{data: @jobs.to_json}
+      #search_term{data: @query.to_json}
+
       = javascript_pack_tag 'jobs'
       
       / .blog-asside-right.col-md-4.search-jobs-div

@@ -8,11 +8,19 @@
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.col-sm-12
         %h2 Search jobs in your favorite platform
         .search-form.wow.pulse{"data-wow-delay" => "0.8s"}
-          %form.form-inline{:action => ""}
+
+          =form_tag jobs_search_path, class: 'form-inline', method: 'get' do
             .form-group
-              %input.form-control{:placeholder => "Programming Platform", :type => "text"}/
-            %button.btn.search-btn{:type => "submit"}
+              =text_field_tag :query, nil, class: "form-control", placeholder: "Programming Platform"
+            =button_to nil, class: 'btn search-btn' , type: :submit do
               %i.fa.fa-search
+
+
+          / %form.form-inline{:action => ""}
+          /   .form-group
+          /     %input.form-control{:placeholder => "Programming Platform", :type => "text"}/
+          /   %button.btn.search-btn{:type => "submit"}
+          /     %i.fa.fa-search
 / property area
 / Count area
 .count-area
