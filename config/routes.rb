@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'jobs#home'
   get 'jobs/new'
-  get 'jobs/create'
+  post 'jobs/create'
   get 'jobs/search'
   post 'jobs/dynamic_search'
   get 'jobs/on_twitter'

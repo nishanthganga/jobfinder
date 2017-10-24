@@ -98,7 +98,7 @@ input {
     outline: 0;
     border: none;
     width: 100%;
-    height: inherit;
+    height: auto;
     color: #333333;
     font-size: 16px;
     padding: 5px 15px;
@@ -2512,7 +2512,7 @@ count-area
 .search-form .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
     color: #FFF;
     text-decoration: none;
-    background-color: #0caa34;
+    background-color: auto;
     outline: 0px none;
 }
 .search-form .dropdown-menu > li > a {
@@ -3215,4 +3215,33 @@ padding: 10px;
     font-size: 16px;
     color: #666666 !important;
     font-weight: bold;
+}
+
+.dropdown-toggle.btn-default {
+    color: #000;
+    background-color: #d3d3d3 !important;
+    border-color: #d3d3d3 !important;
+    font-weight: 600;
+    width: auto;
+}
+
+.open > .dropdown-toggle.btn-default {
+    color: #000 !important;
+    font-weight: 600;
+}
+
+.checkbox > input{
+    width: auto;
+    height: none !important;
+}
+
+.checkbox input[type=checkbox]
+{
+    height: none !important;
+}
+
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    position: absolute;
+    margin-left: -25px;
+    height: none !important;
 }

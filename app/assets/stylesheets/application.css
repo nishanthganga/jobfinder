@@ -15,6 +15,7 @@
  *= require bootstrap.min
  *= require jobs
  *= require responsive
+ *= require bootstrap-multiselect
  *= require_tree .
  *= require_self
  */
