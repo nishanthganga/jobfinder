@@ -68,3 +68,5 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 
+# Config Files
+/config/initializers/01_general_config_vars.rb
