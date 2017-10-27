@@ -1,7 +1,7 @@
 .content-area.blog-page.padding-top-40.jobs-on-twitter-container
   .container
     .row
-      .col-md-4.panel.panel-default.sidebar-menu.wow.fadeInRight.animated
+      .col-md-3.panel.panel-default.sidebar-menu.wow.fadeInRight.animated
         .jobs-on-twitter-list
           .bs-example
             %ul.list-group
@@ -23,9 +23,9 @@
                 %h5 #iOSJobs
       / </div>
       
-      .col-md-8
+      .col-md-9
         #tweets
           = render :partial => "jobs/tweets", :collection => @tweets, :as => :tweet
             
-        #divCheckbox{:style => "visibility: hidden;"}
+        #pagination-div{:style => "visibility: hidden;"}
           = will_paginate @tweets

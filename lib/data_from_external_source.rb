@@ -20,7 +20,7 @@ module DataFromExternalSource
     
     client.search(search_term, result_type: 'recent', since_id: since_id).take(50).reverse_each do |tweet|
        twitter_search_term.tweets.create!(name: tweet.user.name, tweet_id: tweet.id, screen_name: tweet.user.screen_name, 
-          photo_url: tweet.user.profile_image_url_https, date: tweet.created_at, 
+          photo_url: tweet.user.profile_image_url_https, date: tweet.created_at, message: tweet.text,
           favorite_count: tweet.favorite_count, retweet_count: tweet.retweet_count)
        @recent_tweets << tweet
     end

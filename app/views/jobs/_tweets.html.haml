@@ -1,17 +1,53 @@
-.section.jobs-on-twitter-section
-  .s-property-content
-    %p
-      = "Name: #{tweet.name}"  
-      %br
-      = "screen Name: #{tweet.screen_name}"  
-      %br
-      = "Photo: #{tweet.photo_url}" 
-      %br
-      = "Date: #{tweet.date}" 
-      %br
-      = "Message: #{tweet.message}" 
-      %br
-      = "Retweets: #{tweet.retweet_count}"
-      %br
-      = "favourites: #{tweet.favorite_count}" 
-      %br
+/.section.jobs-on-twitter-section
+/   .s-property-content
+/     %p
+/       = "Name: #{tweet.name}"  
+/       %br
+/       = "screen Name: #{tweet.screen_name}"  
+/       %br
+/       = "Photo: #{tweet.photo_url}" 
+/       %br
+/       = "Date: #{tweet.date}" 
+/       %br
+/       = "Message: #{tweet.message}" 
+/       %br
+/       = "Retweets: #{tweet.retweet_count}"
+/       %br
+/       = "favourites: #{tweet.favorite_count}" 
+/       %br
+
+%ol.tweet-list
+  %li.tweet-card
+    .tweet-content
+      .tweet-header
+        %span.fullname
+          %strong 
+            = tweet.name
+        %span.username 
+          @#{tweet.screen_name}
+        %span.tweet-time 
+          \-#{tweet.date}
+      %a
+        %img.tweet-card-avatar{:alt => "", :src => "#{tweet.photo_url}"}/
+      .tweet-text
+        %p{"data-aria-label-part" => "0", :lang => "es"}
+          = tweet.message
+          / %a.twitter-timeline-link{:href => "3", :target => "_blank"}
+          /   %span https://www.mozilla-hispano.org/
+          / %a.twitter-hashtag{:href => ""}
+          /   %s #
+          /   %b firefox
+          / %a.twitter-hashtag{:href => ""}
+          /   %s #
+          /   %b comunidad
+          / %a.twitter-hashtag{:dir => "ltr", :href => ""}
+      .tweet-footer
+        
+        %a.tweet-footer-btn
+          %i.octicon.octicon-sync{"aria-hidden" => "true"}
+          %span 
+            = tweet.retweet_count
+        %a.tweet-footer-btn
+          %i.octicon.octicon-heart{"aria-hidden" => "true"}
+          %span
+            = tweet.favorite_count
