@@ -7,9 +7,21 @@ module DataFromExternalSource
       config.access_token_secret = ENV.fetch("TWITTER_ACCESS_SECRET")
     end
 
-    since_id = nil #get the id of the last record 
+    twitter_search_term = TwitterSearchTerm.find_by_term(search_term)
+
+    last_tweet_for_search_term = Tweet.where(twitter_search_term_id: twitter_search_term.id).last
+    if last_tweet_for_search_term
+      since_id = last_tweet_for_search_term.tweet_id
+    else
+      since_id = nil
+    end
+
     @recent_tweets = []
-    client.search(search_term, result_type: 'recent', since_id: since_id).take(6).collect do |tweet|
+    
+    client.search(search_term, result_type: 'recent', since_id: since_id).take(50).reverse_each do |tweet|
+       twitter_search_term.tweets.create!(name: tweet.user.name, tweet_id: tweet.id, screen_name: tweet.user.screen_name, 
+          photo_url: tweet.user.profile_image_url_https, date: tweet.created_at, 
+          favorite_count: tweet.favorite_count, retweet_count: tweet.retweet_count)
        @recent_tweets << tweet
     end
 
@@ -17,9 +29,5 @@ module DataFromExternalSource
 
   end
 
-
 end
 
-
-# [#<Twitter::Tweet id=923450898478645248>, #<Twitter::Tweet id=923430523732606977>, #<Twitter::Tweet id=923430522491101184>, #<Twitter::Tweet id=923430520972746753>, #<Twitter::Tweet id=923430519823409153>, #<Twitter::Tweet id=923430518560919552>]
-# [#<Twitter::Tweet id=923450898478645248>, #<Twitter::Tweet id=923430523732606977>]

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023152936) do
+ActiveRecord::Schema.define(version: 20171026150034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,5 +46,30 @@ ActiveRecord::Schema.define(version: 20171023152936) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tweets", force: :cascade do |t|
+    t.string "tweet_id"
+    t.string "name"
+    t.string "screen_name"
+    t.string "photo_url"
+    t.datetime "date"
+    t.string "message"
+    t.integer "favorite_count"
+    t.integer "retweet_count"
+    t.bigint "twitter_search_term_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["twitter_search_term_id"], name: "index_tweets_on_twitter_search_term_id"
+  end
+
+  create_table "twitter_search_terms", force: :cascade do |t|
+    t.string "term"
+    t.bigint "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_twitter_search_terms_on_skill_id"
+  end
+
   add_foreign_key "jobs", "cities"
+  add_foreign_key "tweets", "twitter_search_terms"
+  add_foreign_key "twitter_search_terms", "skills"
 end

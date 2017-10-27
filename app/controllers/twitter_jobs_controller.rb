@@ -1,6 +1,7 @@
 class TwitterJobsController < ApplicationController
 	def rails
-    	@tweets = DataFromExternalSource.from_twitter "RoR jobs"
+		term 	= TwitterSearchTerm.find_by_skill_id(Skill.find_by_programming_platform("Ruby on Rails").id).term
+    	@tweets = DataFromExternalSource.from_twitter term
 	end
 
 	def react
