@@ -35,3 +35,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml'
 gem 'jquery-rails'
 gem 'twitter', '~> 6.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'

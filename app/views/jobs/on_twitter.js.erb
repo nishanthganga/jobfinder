@@ -1,0 +1,6 @@
+$('#tweets').append('<%= j render :partial => "jobs/tweets", :collection => @tweets, :as => :tweet %>');
+<% if @tweets.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@tweets) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
