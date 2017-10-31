@@ -18,6 +18,7 @@
 //= require rails-ujs
 //= require bootstrap.min
 //= require bootstrap-multiselect
+//= require gritter
 //= require_tree .
 
 

@@ -17,6 +17,7 @@
  *= require responsive
  *= require bootstrap-multiselect
  *= require font-awesome
+ *= require gritter
  *= require_tree .
  *= require_self
  */

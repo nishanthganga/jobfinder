@@ -15,7 +15,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to jobs_new_path, notice: 'Job has been updated!' }
+        format.html { redirect_to jobs_new_path, notice: 'Job added successfully!' }
       else
         format.html { render :new }
       end
