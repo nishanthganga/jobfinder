@@ -219,7 +219,7 @@ input[type="search"]::-webkit-search-decoration {
     height: 56px;
     padding: 10px 16px;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+/*.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
     color: #1D62F0;
     border-color: #1D62F0;
     background-color: rgba(0,0,0,.0);
@@ -248,7 +248,7 @@ input[type="search"]::-webkit-search-decoration {
     color: #666666;
     border-color: #888888;
     background-color: rgba(0,0,0,.0);
-}
+}*/
 .btn:active, .btn.active {
     background-image: none;
     box-shadow: none;
@@ -291,10 +291,9 @@ input[type="search"]::-webkit-search-decoration {
     font-weight: 600;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,.btn-primary:active:focus, .open > .dropdown-toggle.btn-primary {
-    color: #0caa34;
-    background-color: #313538;
-    border-color: #282829;
-    font-weight: 600;
+    color: #FFF;
+    background-color: #0caa34;
+    border-color: #0caa34;
 }
 .btn-default {
     border-radius: 1px;

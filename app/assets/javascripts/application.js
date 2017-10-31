@@ -11,19 +11,12 @@
 // about supported directives.
 //
 
+//= require turbolinks
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
-//= require turbolinks
 //= require bootstrap.min
 //= require bootstrap-multiselect
 //= require_tree .
 
 
-    $(document).ready(function() {
-        $('#skills_multiselect').multiselect({
-			nonSelectedText: '0 - Skills Selected',
-			numberDisplayed: 0,
-			nSelectedText: ' - Skills Selected'		
-        });
-    });

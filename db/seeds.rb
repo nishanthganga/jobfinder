@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+City.create!(name: "Bangalore")
+City.create!(name: "Pune")
+City.create!(name: "Chennai")
+City.create!(name: "Mumbai")
+City.create!(name: "New Delhi")
+City.create!(name: "Hyderabad")
+
 Skill.create!(programming_platform: "Ruby")
 Skill.create!(programming_platform: "Ruby on Rails")
 Skill.create!(programming_platform: "React JS")
@@ -18,7 +25,7 @@ Skill.create!(programming_platform: "Android")
 Skill.create!(programming_platform: "iOS")
 
 
-TwitterSearchTerm.create!(term: "Ruby", skill_id: Skill.find_by_programming_platform("Ruby").id)
+TwitterSearchTerm.create!(term: "Ruby jobs", skill_id: Skill.find_by_programming_platform("Ruby").id)
 TwitterSearchTerm.create!(term: "Ruby on Rails jobs", skill_id: Skill.find_by_programming_platform("Ruby on Rails").id)
 TwitterSearchTerm.create!(term: "React JS jobs", skill_id: Skill.find_by_programming_platform("React JS").id)
 TwitterSearchTerm.create!(term: "JavaScript jobs", skill_id: Skill.find_by_programming_platform("JavaScript").id)
