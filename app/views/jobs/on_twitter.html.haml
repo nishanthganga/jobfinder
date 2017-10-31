@@ -5,22 +5,33 @@
         .jobs-on-twitter-list
           .bs-example
             %ul.list-group
-              %li.list-group-item.active
-                %h5.bold #RubyOnRailsJobs
-              %li.list-group-item
-                %h5 #ReactJsJobs
-              %li.list-group-item
-                %h5 #JavaScriptJobs
-              %li.list-group-item
-                %h5 #PythonJobs
-              %li.list-group-item
-                %h5 #NodeJsJobs
-              %li.list-group-item
-                %h5 #AngularJsJobs
-              %li.list-group-item
-                %h5 #AndroidJobs
-              %li.list-group-item
-                %h5 #iOSJobs
+              - @search_terms.each do |term|
+                = link_to jobs_on_twitter_path(id: term.first), class: "search_terms" do
+                  -if @id == term.first
+                    %li.list-group-item.active
+                      %h5.bold 
+                        = term.last
+                  -else
+                    %li.list-group-item
+                      %h5.bold 
+                        = term.last
+
+              / %li.list-group-item.active
+              /   %h5.bold #RubyOnRailsJobs
+              / %li.list-group-item
+              /   %h5 #ReactJsJobs
+              / %li.list-group-item
+              /   %h5 #JavaScriptJobs
+              / %li.list-group-item
+              /   %h5 #PythonJobs
+              / %li.list-group-item
+              /   %h5 #NodeJsJobs
+              / %li.list-group-item
+              /   %h5 #AngularJsJobs
+              / %li.list-group-item
+              /   %h5 #AndroidJobs
+              / %li.list-group-item
+              /   %h5 #iOSJobs
       / </div>
       
       .col-md-9

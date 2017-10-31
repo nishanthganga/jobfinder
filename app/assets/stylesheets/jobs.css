@@ -3359,3 +3359,20 @@ padding: 10px;
 .bottom-menu{
     margin-top: 6px;
 }
+
+a[class="search_terms"]{
+    color: #777;
+    border-radius: 0px;
+}
+
+a[class="search_terms"]  h5{
+    margin-top: 15px;    
+}
+
+a > .list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0px; 
+    border-bottom-left-radius: 0px; 
+}
+
+

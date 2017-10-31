@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   post 'jobs/create'
   get 'jobs/search'
   post 'jobs/dynamic_search'
-  get 'jobs/on_twitter'
-
-  get 'twitter_jobs/rails'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'jobs/on_twitter(/:id)', to: 'jobs#on_twitter', as: :jobs_on_twitter
+  
 end
