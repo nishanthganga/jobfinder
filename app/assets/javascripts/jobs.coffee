@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$(document).on 'turbolinks:load', ->
+$ ->
   if $('.pagination').length && $('#tweets').length
     $(window).scroll ->
       url = $('.pagination .next_page').attr('href')
@@ -13,7 +13,7 @@ $(document).on 'turbolinks:load', ->
     $(window).scroll()
 
 
-$(document).on 'turbolinks:load', ->
+$ ->
   $('#skills_multiselect').multiselect
     nonSelectedText: '0 - Skills Selected'
     numberDisplayed: 0

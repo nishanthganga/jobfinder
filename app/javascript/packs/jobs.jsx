@@ -63,7 +63,8 @@ class Jobs extends React.Component{
 
 }
 
-document.addEventListener('turbolinks:load', function() {
+// document.addEventListener('turbolinks:load', function() {
+document.addEventListener('DOMContentLoaded', () => {
 
 	const job_node = document.getElementById('all_jobs');
   	const all_jobs = JSON.parse(job_node.getAttribute('data'));
