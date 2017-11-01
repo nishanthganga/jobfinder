@@ -33,8 +33,8 @@ class JobsController < ApplicationController
 
   def on_twitter
     params[:id] ? @id = params["id"].to_i : @id = 1
-    term  = TwitterSearchTerm.find(@id).term
-    DataFromExternalSource.from_twitter term
+    # term  = TwitterSearchTerm.find(@id).term
+    # DataFromExternalSource.from_twitter term
     @tweets       = Tweet.where(twitter_search_term_id: @id).order("id DESC").paginate(page: params[:page], per_page: 10)
     @search_terms = TwitterSearchTerm.pluck(:id, :term)
     @page_title = "Jobs on Twitter"

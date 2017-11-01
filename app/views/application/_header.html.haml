@@ -22,7 +22,7 @@
         %li
           =link_to "Search Jobs", jobs_search_path, class: "#{active? jobs_search_path}"
         %li
-          =link_to "Jobs on Twitter", jobs_on_twitter_path, class: "#{active? jobs_on_twitter_path}"
+          =link_to "Jobs on Twitter", jobs_on_twitter_path, class: "#{twitter_feeds_page?}"
         %li
           =link_to "Add Jobs", jobs_new_path, class: "#{active? jobs_new_path}"
     / /.navbar-collapse

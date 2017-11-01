@@ -1,7 +1,11 @@
 module ApplicationHelper
 	def active? path
      "active" if current_page? path
-   end
+  end
+
+  def twitter_feeds_page?
+     "active" if current_page?(controller: 'jobs', action: 'on_twitter')
+  end
 
    def url_parser string
    	regex = %r{
