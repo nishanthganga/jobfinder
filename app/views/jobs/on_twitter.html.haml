@@ -37,6 +37,7 @@
       .col-md-9
         #tweets
           = render :partial => "jobs/tweets", :collection => @tweets, :as => :tweet
-            
+        
+        #loading_message    
         #pagination-div{:style => "visibility: hidden;"}
           = will_paginate @tweets

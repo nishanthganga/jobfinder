@@ -13,6 +13,7 @@ class JobsSearchBar extends React.Component{
 			<div className="form-group">
 			<input id="job_search" className="form-control" 
 				value={this.state.term || ""}
+				placeholder="e.g. Ruby on Rails"
 				onChange = { event => this.onInputChange(event.target.value) } />
 			</div>
 		);

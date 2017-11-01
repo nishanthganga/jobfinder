@@ -3,7 +3,13 @@ import React from 'react'
 
 const JobDescription = ({job}) => {
   if (!job) {
-    return <div>Loading...</div>;
+    // return <div>Loading...</div>;
+    return (
+    <div className="empty-search-message">
+      <h3> Search for jobs in the search box.  </h3>
+    </div>
+  );
+
   }
 
 	const skills_array = [];
