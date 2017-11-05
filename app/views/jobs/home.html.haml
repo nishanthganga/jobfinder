@@ -1,3 +1,4 @@
+#all_skills_as_json{data: @all_skills.to_json}
 .slider-area
   .slider
     #bg-slider.owl-carousel.owl-theme
@@ -11,7 +12,9 @@
 
           =form_tag jobs_search_path, class: 'form-inline', method: 'get' do
             .form-group
-              =text_field_tag :query, nil, class: "form-control", placeholder: "Programming Platform"
+              #auto_suggestion
+              = javascript_pack_tag 'auto_suggestion'
+              / =text_field_tag :query, nil, class: "form-control", placeholder: "Programming Platform"
             =button_to nil, class: 'btn search-btn' , type: :submit do
               %i.fa.fa-search
 

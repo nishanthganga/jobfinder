@@ -3,6 +3,7 @@ class JobsController < ApplicationController
   
   def home
     @page_title = "Home"
+    @all_skills = Skill.all_as_json
   end
 
   def new

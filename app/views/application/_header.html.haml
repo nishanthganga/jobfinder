@@ -12,8 +12,10 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => ""}
+      = link_to root_path, title: "Some link", class: "navbar-brand" do
         %h3 Job Finder
+      / %a.navbar-brand{:href => ""}
+      /   %h3 Job Finder
     / Collect the nav links, forms, and other content for toggling
     #navigation.collapse.navbar-collapse.yamm
       %ul.main-nav.nav.navbar-nav.navbar-right
