@@ -3458,3 +3458,15 @@ a > .list-group-item:last-child {
 .react-autosuggest__container input::placeholder{
     color: #adadad;
 }
+
+.tweet-text a{
+    color: #1c94e0;
+}
+
+.tweet_name{
+    color: #535353;
+}
+
+.tweet_name:hover{
+    text-decoration: underline;
+}

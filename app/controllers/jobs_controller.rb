@@ -34,22 +34,25 @@ class JobsController < ApplicationController
 
   def on_twitter
     params[:id] ? @id = params["id"].to_i : @id = 1
-    # term  = TwitterSearchTerm.find(@id).term
-    # DataFromExternalSource.from_twitter term
+    term  = TwitterSearchTerm.find(@id).term
+    data_fetched  = DataFromExternalSource.from_twitter term
+    unless data_fetched
+      flash[:alert] = "Tweets are fetched once in half an hour"
+    end
     @tweets       = Tweet.where(twitter_search_term_id: @id).order("id DESC").paginate(page: params[:page], per_page: 10)
     @search_terms = TwitterSearchTerm.pluck(:id, :term)
-    @page_title = "Jobs on Twitter"
+    @page_title   = "Jobs on Twitter"
   end
 
   private
 
   def set_jobs
     if params[:query] && (params[:query] != "")
-      @query = params[:query]
-      @jobs = Job.joins(:skills).where("lower(skills.programming_platform) LIKE ?", "%#{@query.downcase}%").order("updated_at DESC").distinct.as_json(include: { skills: { only: [:programming_platform] } })
+      @query  = params[:query]
+      @jobs   = Job.joins(:skills).where("lower(skills.programming_platform) LIKE ?", "%#{@query.downcase}%").order("updated_at DESC").distinct.as_json(include: { skills: { only: [:programming_platform] } })
     else
-      @query = []
-      @jobs = []
+      @query  = []
+      @jobs   = []
     end
   end
 

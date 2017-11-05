@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+  include Twitter::Autolink
+
 	def active? path
      "active" if current_page? path
   end
@@ -41,6 +44,10 @@ module ApplicationHelper
 
   def alert_generator msg
     js add_gritter(msg, title: "JobFinder App", sticky: false)
+  end
+
+  def tweet_account_link(name, screen_name)
+    "<a class='tweet_name' href=https://twitter.com/#{screen_name} target='>blank'> #{name} </a>".html_safe
   end
 
 end

@@ -11,6 +11,13 @@ module DataFromExternalSource
 
     last_tweet_for_search_term = Tweet.where(twitter_search_term_id: twitter_search_term.id).last
     if last_tweet_for_search_term
+
+      minutes_since_last_fetch = Tweet.minutes_since_last_fetch(last_tweet_for_search_term.created_at)
+      if minutes_since_last_fetch < 30
+        return false
+      end
+
+      # if its greater than 30 mins, find the last tweet's id
       since_id = last_tweet_for_search_term.tweet_id
     else
       since_id = nil
@@ -25,8 +32,7 @@ module DataFromExternalSource
        @recent_tweets << tweet
     end
 
-    return @recent_tweets
-
+    return true
   end
 
 end
