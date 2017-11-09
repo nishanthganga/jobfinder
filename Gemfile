@@ -18,8 +18,10 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.1'
+  gem 'capybara', '~> 2.15', '>= 2.15.4'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
 end
 
 group :development do
