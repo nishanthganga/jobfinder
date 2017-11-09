@@ -3,13 +3,13 @@ class Skill < ApplicationRecord
 	has_many :twitter_search_terms
 
   scope :all_as_json, -> { 
-  	skills_in_json = []
+  	skills_array = []
   	all_skills = pluck(:programming_platform)
   	all_skills.each do |skill|
   		hash = {name: skill}
-  		skills_in_json.push(hash)
+  		skills_array.push(hash)
   	end
-  	return skills_in_json
+  	return skills_array.to_json
   }
 
 

@@ -2,27 +2,38 @@ require 'rails_helper'
 
 RSpec.describe Job, type: :model do
 
-	it { is_expected.to validate_presence_of(:title)
-										.with_message("Title field can't be blank.")  }
-	it { is_expected.to validate_presence_of(:company_name)
-										.with_message("Company Name field can't be blank.")  }	
-	it { is_expected.to validate_presence_of(:city_id)
-										.with_message("City should be selected.")  }
-	it { is_expected.to validate_presence_of(:skill_ids)
-										.with_message("Select at-least one skill.")  }	
-	it { is_expected.to validate_presence_of(:description)
-										.with_message("Description can't be blank.")  }
-	it { is_expected.to validate_presence_of(:years_experience)
-										.with_message("Experience Required (Years) field should be a numeric.")  }
-	it { is_expected.to validate_numericality_of(:years_experience)
-										.with_message("Experience Required (Years) field should be a numeric.")  }
-	it { is_expected.to validate_presence_of(:months_experience)
-										.with_message("Experience Required (Months) field should be a numeric.")  }
-	it { is_expected.to validate_numericality_of(:months_experience)
-										.with_message("Experience Required (Months) field should be a numeric.")  }
+	context 'validations for all fields' do
 
-	it { is_expected.to have_and_belong_to_many(:skills)}
-	it { is_expected.to belong_to(:city)}
+		it { is_expected.to validate_presence_of(:title)
+										.with_message("Title field can't be blank.")  }
+		it { is_expected.to validate_presence_of(:company_name)
+											.with_message("Company Name field can't be blank.")  }	
+		it { is_expected.to validate_presence_of(:city_id)
+											.with_message("City should be selected.")  }
+		it { is_expected.to validate_presence_of(:skill_ids)
+											.with_message("Select at-least one skill.")  }	
+		it { is_expected.to validate_presence_of(:description)
+											.with_message("Description can't be blank.")  }
+		it { is_expected.to validate_presence_of(:years_experience)
+											.with_message("Experience Required (Years) field should be a numeric.")  }
+		it { is_expected.to validate_numericality_of(:years_experience)
+											.with_message("Experience Required (Years) field should be a numeric.")  }
+		it { is_expected.to validate_presence_of(:months_experience)
+											.with_message("Experience Required (Months) field should be a numeric.")  }
+		it { is_expected.to validate_numericality_of(:months_experience)
+											.with_message("Experience Required (Months) field should be a numeric.")  }
+
+	end
+
+
+	context 'validations for associations' do
+
+   		it { is_expected.to have_and_belong_to_many(:skills)}
+		it { is_expected.to belong_to(:city)}
+
+    end										
+
+	
 
 
   context 'validation tests' do
