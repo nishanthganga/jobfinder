@@ -1,0 +1,53 @@
+= form_for(job, :url => {:action => 'create'}, html: { :method => :POST}) do |f|
+        
+  - if job.errors.any?
+    .alert.alert-danger
+      %strong
+        %p
+          = job.errors.count
+          Errors prevented this job from being posted.
+      %ul
+        - job.errors.each do |attr, msg|
+          %li= msg
+
+  .row
+    .col-sm-6
+      .form-group
+        = f.label :title 
+        = f.text_field :title, class: 'form-control'
+    .col-sm-6
+      .form-group
+        = f.label :company_name
+        = f.text_field :company_name, class: 'form-control'
+
+  .row
+    .col-sm-6 
+      .form-group
+        = f.label :city_id
+        = f.collection_select(:city_id, City.all.order(:name), :id, :name, { include_blank: false}, class: 'form-control')
+    
+    .col-sm-6
+      .form-group
+        = f.label :skill_ids, "Required Skills" 
+        %br
+        = f.select(:skill_ids, Skill.all.select('id, programming_platform').order('programming_platform ASC').map {|x| [x.programming_platform, x.id]},{},{:class => 'form-control', :id => 'skills_multiselect', :multiple => true})
+  
+  .row            
+    .col-sm-6
+      .form-group
+        = f.label :years_experience, "Experience Required (Years)"
+        = f.text_field :years_experience, class: 'form-control'
+    .col-sm-6
+      .form-group
+        = f.label :months_experience, "Experience Required (Months)"
+        = f.text_field :months_experience, class: 'form-control'
+    
+  .row
+    .col-sm-12
+      .form-group
+        = f.label :description, "Job Description"
+        = f.text_area:description, class: 'form-control', rows: 8
+  
+  .row     
+    .col-sm-12.text-center
+      %button.btn.btn-primary{:type => "submit"} Add Job

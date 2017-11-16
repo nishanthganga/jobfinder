@@ -52,7 +52,7 @@ class JobsController < ApplicationController
   def set_jobs
     if params[:query] && (params[:query] != "")
       @query  = params[:query]
-      @jobs   = Job.joins(:skills).where("lower(skills.programming_platform) LIKE ?", "%#{@query.downcase}%").order("updated_at DESC").distinct.as_json(include: { skills: { only: [:programming_platform] } })
+      @jobs   = Job.joins(:skills, :city).where("lower(skills.programming_platform) LIKE ?", "%#{@query.downcase}%").order("updated_at DESC").distinct.as_json(include: { skills: { only: [:programming_platform] }, city: { only: [:name] } })
     else
       @query  = []
       @jobs   = []
