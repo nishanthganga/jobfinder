@@ -27,7 +27,7 @@
         %li
           =link_to "Add Jobs", jobs_new_path, class: "#{active? jobs_new_path}"
 
-        - if current_admin
+        - if current_admin && admin_signed_in?
           %li 
             =link_to "Sign Out", destroy_admin_session_path, method: :delete
 

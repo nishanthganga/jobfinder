@@ -34,14 +34,16 @@ class JobsController < ApplicationController
   end
 
   def on_twitter
-    params[:id] ? @id = params[:id].to_i : @id = 1
-    term  = TwitterSearchTerm.find(@id).term
-    data_fetched  = DataFromExternalSource.from_twitter term
+    params[:id] ? @id = params[:id] : @id = 1
+    twitter_search_term  = TwitterSearchTerm.friendly.find(@id)
+
+    data_fetched  = DataFromExternalSource.from_twitter twitter_search_term.term
     unless data_fetched
       flash[:alert] = "Tweets are fetched once in half an hour."
     end
-    @tweets       = Tweet.where(twitter_search_term_id: @id).order("id DESC").paginate(page: params[:page], per_page: 10)
-    @search_terms = TwitterSearchTerm.pluck(:id, :term)
+    
+    @tweets       = Tweet.where(twitter_search_term_id: twitter_search_term.id).order("id DESC").paginate(page: params[:page], per_page: 10)
+    @search_terms = TwitterSearchTerm.pluck(:slug, :term)
     @page_title   = "Jobs on Twitter"
   end
 
