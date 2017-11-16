@@ -26,6 +26,11 @@
           =link_to "Jobs on Twitter", jobs_on_twitter_path, class: "#{twitter_feeds_page?}"
         %li
           =link_to "Add Jobs", jobs_new_path, class: "#{active? jobs_new_path}"
+
+        - if current_admin
+          %li 
+            =link_to "Sign Out", destroy_admin_session_path, method: :delete
+
     / /.navbar-collapse
   / /.container-fluid
 / End of nav bar

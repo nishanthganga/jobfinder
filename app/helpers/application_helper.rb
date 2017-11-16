@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
   def twitter_feeds_page?
-     "active" if current_page?(controller: 'jobs', action: 'on_twitter')
+     "active" if current_page?(controller: '/jobs', action: 'on_twitter')
   end
 
    def url_parser string

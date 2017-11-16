@@ -1,0 +1,30 @@
+<div class="row login-div">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="box-for overflow">                         
+      <div class="col-md-12 col-xs-12 login-blocks">
+        <h2>Login : </h2> 
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="text-center">
+          <%= f.submit "Log in", class: "btn btn-default" %>
+        </div>
+      <% end %>
+   
+      </div>
+    </div> 
+  
+    <h3>Credentials for demo: </h3>
+    <p>Email: developer.nishanth@gmail.com</p>
+    <p>password: password</p>
+
+  </div>
+</div>

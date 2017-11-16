@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_jobs, only: [:search, :dynamic_search]
+  before_action :authenticate_admin!, only: [:new, :create]
   
   def home
     @page_title = "Home"

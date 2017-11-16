@@ -3470,3 +3470,8 @@ a > .list-group-item:last-child {
 .tweet_name:hover{
     text-decoration: underline;
 }
+
+.login-div{
+    margin-top: 60px;
+    margin-bottom: 200px;
+}
