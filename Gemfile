@@ -22,6 +22,7 @@ group :development, :test do
   gem 'capybara', '~> 2.15', '>= 2.15.4'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do

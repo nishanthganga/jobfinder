@@ -15,10 +15,25 @@ RSpec.feature "Jobs Features", type: :feature do
       expect(page).to have_selector("div", id: "tweets")
     end
 
-    scenario "check add job page" do
+
+    # Tests before using Devise: 
+
+    scenario "add job page without login" do
+
       visit jobs_new_path
+      expect(page).to have_content("LOGIN")
+      
+    end 
+    
+    scenario "check add job page after login" do
+
+      admin = FactoryBot.create(:admin)
+      login_as(admin, :scope => :admin)
+
+      visit jobs_new_path
+
       expect(page).to have_content("Title")
-      expect(page).to have_content("Company name")
+      expect(page).to have_content("Company Name")
       expect(page).to have_content("City")
       expect(page).to have_content("Required Skills")
       expect(page).to have_content("Experience Required (Years)")
@@ -26,8 +41,29 @@ RSpec.feature "Jobs Features", type: :feature do
       expect(page).to have_content("Description")
     end 
 
+    scenario "Fill in add job form without selecting any skill" do 
+
+      admin = FactoryBot.create(:admin)
+      login_as(admin, :scope => :admin)
+
+      visit jobs_new_path
+
+      within("form") do
+        fill_in 'Title', with: 'Title'
+        fill_in 'Company Name', with: 'Company Name'
+        fill_in 'Experience Required (Years)', with: '4'
+        fill_in 'Experience Required (Months)', with: '1'
+        fill_in 'Job Description', with: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+      end
+      click_button 'Add Job'
+      expect(page).to have_content 'Select at-least one skill.'
+
+    end
+
 
   end
+
+  # PhantomJS didn't support my Ubuntu system.
 
   # context 'Search Features' do
   #   scenario "should be happy path" do
