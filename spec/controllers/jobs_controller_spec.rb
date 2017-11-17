@@ -4,11 +4,6 @@ RSpec.describe JobsController, type: :controller do
 
 context 'Check Pages' do 
 	
-	it 'New Page' do 
-		get :new 
-		expect(response).to be_success
-	end
-
 	it 'Home Page' do 
 		get :home 
 		expect(response).to be_success
