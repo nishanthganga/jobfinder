@@ -36,8 +36,8 @@ RSpec.describe Job, type: :model do
 	
 
 
-  context 'validation tests' do
-  	it 'checks the presence of title and company_name' do
+  context 'form input validation tests' do
+  	it 'ensures title and company_name presence' do
   		job = Job.new(city_id: 1, description: "Lorem Ipsum", years_experience: 1, 
   			months_experience: 6)
   		skill = Skill.last
@@ -45,14 +45,14 @@ RSpec.describe Job, type: :model do
   		expect(job.save).to eq(false)
   	end
 
-  	it 'checks the presence of skills' do
+  	it 'ensures skills presence' do
   		job = Job.new(title: "My title", company_name: "Company Name", city_id: 1, description: "Lorem Ipsum", years_experience: 1, 
   			months_experience: 6)
   		expect(job.save).to eq(false)
   	end
 
 
-  	context 'checks the experience years and months fields to be in range' do
+  	context 'ensures experience years and months fields presence and to be in range' do
 	    let (:params) { {title: "My title", company_name: "Company Name", city_id: 1, description: "Lorem Ipsum"} }
 	    before(:each) do
 	      @job = Job.new(params)
@@ -60,19 +60,19 @@ RSpec.describe Job, type: :model do
 	  	  @job.skill_ids << skill
 	    end
 
-	    it 'checks year field to be in range' do
+	    it 'ensures year field to be in range' do
 	      @job.months_experience = 11
 	      @job.years_experience = 30
 	      expect(@job.save).to eq(false)
 	    end
 
-	    it 'checks month field to be in range' do
+	    it 'ensures month field to be in range' do
 	      @job.months_experience = 12
 	      @job.years_experience = 25
 	      expect(@job.save).to eq(false)
 	    end
 
-	    it 'accepts when both month and year fields are valid' do
+	    it 'ensures both month and year fields are valid' do
 	      @job.months_experience = 11
 	      @job.years_experience = 25
 	      expect(@job.save).to eq(true)
@@ -80,7 +80,7 @@ RSpec.describe Job, type: :model do
 
     end
 
-  	it 'all valid inputs' do
+  	it 'should succeed for all valid inputs' do
   		job = Job.new(title: "My title", company_name: "Company Name", city_id: 1, description: "Lorem Ipsum", years_experience: 3, 
   			months_experience: 11)
   		skill = Skill.last

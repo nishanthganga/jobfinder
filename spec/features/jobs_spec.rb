@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.feature "Jobs Features", type: :feature do
   
-  context 'checks Job related Pages' do 
+  context 'Job related Pages' do 
     
-    scenario "checks root path" do
+    scenario "ensures the root path" do
       visit root_path
       expect(page).to have_content("Search jobs in your favorite platform")
     end
 
-    scenario "visit Jobs on Twitter Page" do 
+    scenario "ensures Jobs on Twitter Page" do 
       visit jobs_on_twitter_path
       expect(page).to have_selector("div", class: "jobs-on-twitter-list")
       expect(page).to have_selector("div", id: "tweets")
@@ -18,14 +18,14 @@ RSpec.feature "Jobs Features", type: :feature do
 
     # Tests before using Devise: 
 
-    scenario "add job page without login" do
+    scenario "ensures authentication for New Jobs page" do
 
       visit jobs_new_path
       expect(page).to have_content("LOGIN")
       
     end 
     
-    scenario "check add job page after login" do
+    scenario "ensures Jobs New page's content" do
 
       admin = FactoryBot.create(:admin)
       login_as(admin, :scope => :admin)
@@ -41,7 +41,7 @@ RSpec.feature "Jobs Features", type: :feature do
       expect(page).to have_content("Description")
     end 
 
-    scenario "Fill in add job form without selecting any skill" do 
+    scenario "ensures to raise error if mandatory fields of the form are not filled" do 
 
       admin = FactoryBot.create(:admin)
       login_as(admin, :scope => :admin)

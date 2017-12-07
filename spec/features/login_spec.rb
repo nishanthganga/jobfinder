@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Login Features", type: :feature do
 
-	context 'Check login' do
-		scenario 'check login page' do 
+	context 'Login Page' do
+		scenario 'should pass the authentication' do 
 			visit '/login'
 			within("form") do
 		        fill_in 'Email', with: 'developer.nishanth@gmail.com'
