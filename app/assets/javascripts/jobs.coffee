@@ -21,3 +21,8 @@ $ ->
   return
 
 
+$ ->
+  tinymce.init plugins: 'link image code'
+  return
+
+

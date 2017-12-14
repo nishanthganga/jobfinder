@@ -1,0 +1,11 @@
+plugins:
+  # - image
+  - link
+
+setup :
+  function(ed) {
+    ed.on('init', function() 
+    {
+        this.getDoc().body.style.fontSize = '14px';
+    });
+  }

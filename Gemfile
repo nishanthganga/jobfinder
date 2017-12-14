@@ -48,3 +48,4 @@ gem 'active_model_serializers', '~> 0.10.6'
 gem 'simplecov', :require => false, :group => :test
 gem 'devise', '~> 4.3'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+gem 'tinymce-rails', '~> 4.4.3'
