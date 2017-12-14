@@ -3485,3 +3485,7 @@ a > .list-group-item:last-child {
     font-size: 20px;
     line-height: 30px;
 }
+
+.credits{
+    margin-left: 200px;
+}
