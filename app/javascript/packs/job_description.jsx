@@ -20,11 +20,11 @@ const JobDescription = ({job}) => {
 	let work_experience = ""
 	if (job.years_experience == 0)
 	{
-		work_experience = job.months_experience + " years";
+		work_experience = job.months_experience + " months";
 	}
 	else if (job.months_experience == 0)
 	{
-		work_experience = job.years_experience + " months";
+		work_experience = job.years_experience + " years";
 	}
 	else
 	{
