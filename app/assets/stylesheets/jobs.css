@@ -3487,8 +3487,13 @@ a > .list-group-item:last-child {
     line-height: 30px;
 }
 
+.developed_by{
+    margin-left: 100px;
+    font-size: 10px;
+}
+
 .credits{
-    margin-left: 200px;
+    font-size: 10px;
 }
 
 .desc-text{
