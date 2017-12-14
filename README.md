@@ -1,15 +1,13 @@
-#JobFinder Web Application
+# JobFinder Web Application
 
-####Initial release date: 14th Dec, 2017
-
-##Description: 
+## Description: 
 
 * This web application is built to show how React JS (using 'webpacker') can be used in a Rails 5 applications. It is a simple job searching application where users can search for jobs dynamically. 
 
-##Demo: 
+## Demo: 
 
 
-##Key Features: 
+## Key Features: 
 
 * Autosuggestion of technologies in the Home Page. (uses [react-autosuggest](https://github.com/moroshko/react-autosuggest))
 * Dynamically search for jobs in the Search Page. (uses React JS)
@@ -25,6 +23,6 @@ You can make calls using the [Postman chrome app](https://chrome.google.com/webs
 * Views are written in Haml
 
 
-##Theme Credits:
+## Theme Credits:
 
 [Garo Estate](https://technext.github.io/garo-estate/)
