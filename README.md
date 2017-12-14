@@ -13,11 +13,11 @@
 * Dynamically search for jobs in the Search Page. (uses React JS)
 * Search jobs on twitter inside the application. (Uses 'twitter' gem). 
 * Site Admin can add jobs (Admin credentials are given in the admin login page in the demo app)
-* Basic REST API to list and show jobs.
-  Example links: 
-  GET: http://localhost:3000/api/v1/jobs
-  GET: http://localhost:3000/api/v1/jobs/1
-  GET: http://localhost:3000/api/v1/jobs_api
+* Basic REST API to list and show jobs.  
+Example links: 
+GET: http://localhost:3000/api/v1/jobs  
+GET: http://localhost:3000/api/v1/jobs/1  
+GET: http://localhost:3000/api/v1/jobs_api
 You can make calls using the [Postman chrome app](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 * Code is tested with 98% coverage. Tools used: rspec-rails, capybara, selenium-webdriver, shoulda-matchers, factory_bot_rails and simplecov 
 * Views are written in Haml
