@@ -68,7 +68,7 @@ const JobDescription = ({job}) => {
           <div className="job-description-title">
             <span>Job Description</span>
           </div>
-          <div className="s-property-content" dangerouslySetInnerHTML={{__html: job.description}} />
+          <div className="s-property-content desc-text" dangerouslySetInnerHTML={{__html: job.description}} />
         </div>
 	</div>
   );
