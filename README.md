@@ -34,8 +34,3 @@ https://rails-job-finder.herokuapp.com
 
 [Garo Estate](https://technext.github.io/garo-estate/)
 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; links: 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET: https://abc
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET: https://xyz1  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can make calls using the [Postman chrome app](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
