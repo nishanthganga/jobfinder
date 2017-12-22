@@ -18,9 +18,12 @@ https://rails-job-finder.herokuapp.com
 * Site Admin can add jobs (Admin credentials are given in the admin login page in the demo app)
 * Basic REST API to list and show jobs.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; links: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; links:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET: https://rails-job-finder.herokuapp.com/api/v1/jobs
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET: https://rails-job-finder.herokuapp.com/api/v1/jobs/1  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET: https://rails-job-finder.herokuapp.com/api/v1/jobs/1
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can make calls using the [Postman chrome app](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 
 * Code is tested with 98% coverage. Tools used: rspec-rails, capybara, selenium-webdriver, shoulda-matchers, factory_bot_rails and simplecov 
@@ -30,3 +33,9 @@ https://rails-job-finder.herokuapp.com
 ## Theme Credits:
 
 [Garo Estate](https://technext.github.io/garo-estate/)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; links: 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET: https://abc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GET: https://xyz1  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can make calls using the [Postman chrome app](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
