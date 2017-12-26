@@ -4,7 +4,7 @@
 
 ## Description: 
 
-* This web application shows how React JS (using 'webpacker') can be used in a Rails 5.1 applications. It is a simple job searching application where users can search for jobs dynamically. 
+* This web application shows how React JS (using 'webpacker') can be used in Rails 5.1 applications. It is a simple job searching application where users can search for jobs dynamically. 
 
 ## Demo: 
 
