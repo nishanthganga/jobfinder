@@ -23,6 +23,4 @@ context 'Check Pages' do
 end
 
 
-
-
 end
