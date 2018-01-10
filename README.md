@@ -1,6 +1,7 @@
 # JobFinder Web Application
 
-#### Initial release date: 14th Dec, 2017
+#### Project started on: Oct 19, 2017
+#### Pushed to Github on: 14th Dec, 2017
 
 ## Description: 
 
